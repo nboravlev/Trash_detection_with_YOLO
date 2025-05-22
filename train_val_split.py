@@ -1,4 +1,4 @@
-# Split between train and val folders
+# Разделить данные на Train и Test
 
 from pathlib import Path
 import random
@@ -8,13 +8,13 @@ import shutil
 import argparse
 
 
-# Define and parse user input arguments
+# Парсинг аргументов, которые передал пользователь
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--datapath', help='Path to data folder containing image and annotation files',
+parser.add_argument('--datapath', help='Указать путь к данным',
                     required=True)
-parser.add_argument('--train_pct', help='Ratio of images to go to train folder; \
-                    the rest go to validation folder (example: ".8")',
+parser.add_argument('--train_pct', help='Доля данных, которая идет на обучение; \
+                    Остельные данные сохраняются в папке для валидации (пример: ".8")',
                     default=.8)
 
 args = parser.parse_args()
