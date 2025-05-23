@@ -50,7 +50,7 @@ test_img_path = os.path.join(cwd,'data/test/images')
 test_txt_path = os.path.join(cwd,'data/test/labels')
 
 # Create folders if they don't already exist
-for dir_path in [train_img_path, train_txt_path, val_img_path, val_txt_path]:
+for dir_path in [train_img_path, train_txt_path, val_img_path, val_txt_path, test_img_path, test_txt_path]:
    if not os.path.exists(dir_path):
       os.makedirs(dir_path)
       print(f'Created folder at {dir_path}.')
