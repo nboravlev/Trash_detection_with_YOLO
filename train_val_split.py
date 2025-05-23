@@ -25,7 +25,7 @@ args = parser.parse_args()
 
 data_path = args.datapath
 train_percent = float(args.train_pct)
-test_persent = float(args.test_pct)
+test_percent = float(args.test_pct)
 
 # Check for valid entries
 if not os.path.isdir(data_path):
@@ -34,7 +34,7 @@ if not os.path.isdir(data_path):
 if train_percent < .01 or train_percent > 0.9:
    print('Invalid entry for train_pct. Please enter a number between .01 and .9.')
    sys.exit(0)
-val_percent = 1 - train_percent - test_persent
+val_percent = 1 - train_percent - test_percent
 
 # Define path to input dataset 
 input_image_path = os.path.join(data_path,'images')
