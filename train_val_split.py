@@ -83,9 +83,9 @@ for i, set_num in enumerate([train_num, val_num, test_num]):
 
     if i == 0: # Copy first set of files to train folders
       new_img_path, new_txt_path = train_img_path, train_txt_path
-    if i == 1: # Copy second set of files to the validation folders
+    elif i == 1: # Copy second set of files to the validation folders
       new_img_path, new_txt_path = val_img_path, val_txt_path
-    elif i == 2: # Copy second set of files to the test folders
+    elif i == 2: # Copy third set of files to the test folders
     new_img_path, new_txt_path = test_img_path, test_txt_path
 
     shutil.copy(img_path, os.path.join(new_img_path,img_fn))
