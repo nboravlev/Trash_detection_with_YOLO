@@ -72,7 +72,7 @@ print('Images moving to test: %d' % test_num)
 print('Images moving to validation: %d' % val_num)
 
 # Select files randomly and copy them to train or val folders
-for i, set_num in enumerate([train_num, val_num]):
+for i, set_num in enumerate([train_num, val_num, test_num]):
   for ii in range(set_num):
     img_path = random.choice(img_file_list)
     img_fn = img_path.name
