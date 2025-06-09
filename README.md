@@ -12,17 +12,25 @@
 ```mermaid
 flowchart LR
 %% User and Frontend %%
-A[(Browser)] -->
+A((Browser)) -->
 B["`__Frontend React App__
 upload image
-prewiev`"]
+preveiw`"]
 %% Backend 
 B --> |Upload image| C[(FastAPI Backend)]
-C --> D[(YOLO)]
-D --> |/detect/| E[Business Logic Checks]
-E --> F["`**Tires Warning**`"]
-E --> G["`**OutSide Trash Warning`"]
-E --> H["`**Bin Overfield Warnong`"]
-    
-   
+C --> D{YOLO}
+D --> |detect| E[Bussines Logic Checks]
+E --> F["`_Tires Warning_`"]
+E --> G["`_OutSide Trash Warning_`"]
+E --> H["`_Bin Overfield Warning_`"]
+
+F --> I["`__JSON__
+detection
+tires warning
+overfield bin
+outside trash`"]
+G --> I
+H --> I
+I --> |send JSON| J[Frontend React App]  
+J --> K((Browser))
 ```
