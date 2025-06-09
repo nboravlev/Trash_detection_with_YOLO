@@ -23,6 +23,7 @@ D --> |detect| E[Bussines Logic Checks]
 E --> F["`_Tires Warning_`"]
 E --> G["`_OutSide Trash Warning_`"]
 E --> H["`_Bin Overfield Warning_`"]
+D --> |detect| I
 
 F --> I["`__JSON__
 detection
