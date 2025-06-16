@@ -42,7 +42,6 @@ J --> K((Browser))
 ```mermaid
 flowchart LR
 
-flowchart TD
     A[📸 Камера или Фото площадки]
     A --> B["`⬆️ Загрузка изображения`"]
     B --> C["`📦 YOLOv8 Object Detection`"]
@@ -56,7 +55,7 @@ flowchart TD
     D2 -->|Да| E2["`⚠️ Мусор вне баков`"]
     D3 -->|Да| E3["`⚠️ Бак переполнен`"]
 
-    D1 -->|Нет| X1["`✓ OK``"]
+    D1 -->|Нет| X1["`✓ OK`"]
     D2 -->|Нет| X2["`✓ OK`"]
     D3 -->|Нет| X3["`✓ OK`"]
 
@@ -70,4 +69,16 @@ flowchart TD
     F --> G["`📄 JSON / HTML отчёт + результат с BBox`"]
     G --> H["`👀 Отображение на интерфейсе или Dashboard`"]
 
+```
+```mermaid
+flowchart LR
+%% User and Frontend %%
+A((App)) -->|Upload image| C[(FastAPI Backend)]
+C --> |batch| D[reddis]
+C --> F1{Storage: Minio}
+D --> F{YOLO}
+F --> |detect| G[Postprocessing]
+G --> I[JSON]
+I --> H[BD: metadata, logs]
+H --> J[Report]
 ```
